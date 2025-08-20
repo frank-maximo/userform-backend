@@ -6,6 +6,6 @@ RUN gradle clean build --no-daemon
 
 #Use a lightweight Java image to run the built JAR
 FROM openjdk:17-jdk-slim
-EXPOSE 8080
+EXPOSE 8081
 COPY --from=builder /home/gradle/project/build/libs/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
