@@ -2,7 +2,7 @@
 FROM gradle:8.2.1-jdk17 AS builder
 COPY --chown=gradle:gradle . /home/gradle/project
 WORKDIR /home/gradle/project
-RUN ./gradlew clean build --no-daemon
+RUN gradle clean build --no-daemon
 
 #Use a lightweight Java image to run the built JAR
 FROM openjdk:17-jdk-slim
