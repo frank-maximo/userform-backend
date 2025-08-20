@@ -18,7 +18,7 @@
 
 # Attempt to set APP_HOME
 # Resolve links: $0 may be a link
-done
+
 
 
 # Use the maximum available, or set MAX_FD != -1 to use that value.
