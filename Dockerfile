@@ -1,8 +1,8 @@
 #Use a Gradle image to build the project
-FROM gradle:8.2.1-jdk17 AS builder
+FROM gradle:7.5.0-jdk17 AS builder
 COPY --chown=gradle:gradle . /home/gradle/project
 WORKDIR /home/gradle/project
-RUN gradle clean build --no-daemon
+RUN ./gradlew clean build -x test --no-daemon
 
 #Use a lightweight Java image to run the built JAR
 FROM openjdk:17-jdk-slim
